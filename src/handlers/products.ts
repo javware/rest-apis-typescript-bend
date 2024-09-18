@@ -71,9 +71,9 @@ export const deleteProduct = async (req: Request, res: Response) => {
         })
     }
 
-    // await product.destroy() // -> Elimina por completo de la bd
-    product.availability = false
-    product.save()
+    await product.destroy() // -> Elimina por completo de la bd
+    // product.availability = false
+    // product.save()
 
     res.json({ data: 'Producto Eliminado' })
 }
